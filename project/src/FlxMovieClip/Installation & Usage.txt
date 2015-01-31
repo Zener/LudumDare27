@@ -1,0 +1,101 @@
+
+FLXMOVIECLIP
+--------------------
+--------------------
+
+With FlxMovieClip you can draw a Flash MovieClip just like an FlxSprite (with a couple exceptions).
+
+
+INSTALLATION
+--------------------
+--------------------
+1. Navigate to your Flixel plugin folder (src\org\flixel\plugin)
+2. Create a new folder called 'funstorm'
+3. Put FlxMovieClip.as in the funstorm folder
+
+
+DEMO INSTALLATION
+--------------------
+--------------------
+1. Extract DemoProject.zip into a new folder
+2. Open 'FlxMovieClip.as3proj' with FlashDevelop
+
+
+USAGE
+--------------------
+--------------------
+
+To create a new FlxMovieClip and add it to the state:
+--------------------
+var fmc:FlxMovieClip = new FlxMovieClip(x,y);
+fmc.loadMovieClip(movieclip, width, height);
+add(fmc);
+
+To create a new looping FlxMovieClip and add it to the state:
+--------------------
+fmc.loadMovieClip(movieclip, width, height, true);
+
+To create a new FlxMovieClip that starts playing automatically and add it to the state:
+--------------------
+fmc.loadMovieClip(movieclip, width, height, false, true);
+
+To create a new FlxMovieClip that calls a function at the end of its animation and add it to the state:
+--------------------
+fmc.loadMovieClip(movieclip, width, height, false, false, function);
+
+To start/stop MovieClip:
+--------------------
+fmc.playing = true;
+fmc.playing = false;
+
+
+FAQ
+--------------------
+--------------------
+
+Who made this?
+--------------------
+http://www.funstormgames.com/
+
+What's the point of this?
+--------------------
+To draw a Flash MovieClip as an FlxSprite, so you can use it in Flixel like any other FlxSprite.
+
+Should I use this instead of FlxSprites or FlxG.stage.addChild()/addChildAt()?
+--------------------
+NO!! Flixel is designed to be used with pixel art, not vector art.
+Using FlxMovieClips is more processing intensive than the other methods. Don't use this if you can avoid it!
+
+Why not just use FlxSprites instead of MovieClips?
+--------------------
+It's true that MovieClips can be rendered as sprite sheets and imported into Flixel. This should be the first thing you try!
+However, sometimes FlxSprites just don't meet the requirements - e.g. complicated menus with lots of animations, or long high-quality cutscenes that are simply too large to render as a sprite sheet.
+
+Why not just use FlxG.stage.addChild()/addChildAt()?
+--------------------
+It's true that addChild can be used to draw a MovieClip on top of or below the Flixel camera. This should be the second thing you try!
+However, sometimes addChild just doesn't meet the requirements - e.g. if you want the Flixel cursor to appear on top, or draw the MovieClip at a specific order within the Flixel display list.
+
+Can I really do everything I can do with a Flash MovieClip with an FlxSprite?
+--------------------
+No! Some method and properties are unsupported.
+Supported: x, y, angle, scale, offset, velocity, acceleration, antialiasing, visible, flash movieclip animations
+Unsupported: alpha, blend, replaceColor, stamp, drawLine, fill, active, flixel animations
+
+Can I use this in my game?
+--------------------
+Yes. Free of charge.
+Please thank me in the credits and link back to me if possible - but this is not a requirement!
+
+Where can I download the source code?
+--------------------
+http://www.funstormgames.com/blog
+
+Is the demo's source code included in the download?
+--------------------
+Yes
+
+Is anything else included in the download?
+--------------------
+Yes, the Flixel engine from http://flixel.org that is required to run the demo.
+See included flixel-license.txt file for licensing information.
